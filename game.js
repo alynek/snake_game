@@ -1,10 +1,11 @@
 function setup(){
     createCanvas(600, 600)
+    frameRate(10)
     food.add()
 }
 
 function draw(){
-    background(51)
+    background(51)  
     snake.update()
     snake.show()
     food.show()
