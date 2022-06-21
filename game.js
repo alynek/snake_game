@@ -1,11 +1,13 @@
 function setup(){
     createCanvas(600, 600)
+    food.add()
 }
 
 function draw(){
     background(51)
     snake.update()
     snake.show()
+    food.show()
 }
 
 function keyPressed(){
