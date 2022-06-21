@@ -3,7 +3,10 @@ const food = {
     scale: 20,
 
     add(){
-        this.position = createVector(random(width), random(height))
+        let cols = floor(width / this.scale)
+        let rows = floor(height / this.scale)
+        this.position = createVector(floor(random(cols)), floor(random(rows)))
+        this.position.mult(this.scale)
     },
 
     show(){
