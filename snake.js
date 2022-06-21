@@ -41,6 +41,15 @@ const snake = {
     eat(food){
         let distance = dist(this.x, this.y, food.position.x, food.position.y)
         return distance < 1
+    },
+    die(){
+        for(let i = 0; i < this.tail.length; i++){
+            let distance = dist(this.x, this.y, this.tail[i].x, this.tail[i].y)
+            if(distance < 1){
+                this.size = 0
+                this.tail = []
+            }
+        }
     }
 }
 

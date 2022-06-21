@@ -10,6 +10,7 @@ function draw(){
         snake.size++
         food.add()
     } 
+    snake.die()
     snake.update()
     snake.show()
     food.show()
