@@ -5,7 +5,11 @@ function setup(){
 }
 
 function draw(){
-    background(51)  
+    background(51) 
+    if(snake.eat(food)){
+        snake.size++
+        food.add()
+    } 
     snake.update()
     snake.show()
     food.show()
