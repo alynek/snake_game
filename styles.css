@@ -1,0 +1,24 @@
+.container {
+    font-family: arial;
+    font-size: 22px;
+    margin: 20px 0px 0px 270px;
+    width: 200px;
+    height: 250px;
+    outline: dashed 1px black;
+    text-align: center;
+  }
+
+  .container2 {
+    font-family: arial;
+    font-size: 22px;
+    margin: 40px 0px 0px 255px;
+    width: 230px;
+    height: 280px;
+    outline: dashed 1px black;
+    text-align: center;
+  }
+
+  .tombstone{
+    width: 100px;
+    height: 100px;
+  }
