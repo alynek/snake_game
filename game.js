@@ -1,5 +1,8 @@
 function setup(){
-    createCanvas(600, 600)
+    let canvas = createCanvas(800, 600)
+    let x = (windowWidth - width) / 2
+    let y = (windowHeight - height) / 20
+    canvas.position(x, y)
     frameRate(10)
     food.add()
 }
