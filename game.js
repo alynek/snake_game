@@ -1,6 +1,6 @@
 function setup(){
-    let canvas = createCanvas(800, 600)
-    let x = (windowWidth - width) / 2
+    let canvas = createCanvas((windowWidth - 500), (windowHeight - 100))
+    let x = (windowWidth - width) / 2 
     let y = (windowHeight - height) / 20
     canvas.position(x, y)
     frameRate(10)
