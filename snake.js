@@ -48,6 +48,7 @@ const snake = {
             if(distance < 1){
                 this.size = 0
                 this.tail = []
+                songEatDie()
             }
         }
     }
