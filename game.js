@@ -1,5 +1,5 @@
 let songEat;
-let songDie;
+let songDeath;
 
 function setup(){
     let canvas = createCanvas((windowWidth - 500), (windowHeight - 100))
@@ -8,7 +8,8 @@ function setup(){
     canvas.position(x, y)
 
     songEat = loadSound('sounds/human-male-enjoy-humm.wav');
-    songDie = loadSound('sounds/retro-arcade-lose.wav');
+    songDeath = loadSound('sounds/retro-arcade-lose.wav');
+    
 
     frameRate(10)
     food.add()
@@ -19,9 +20,9 @@ function songEatLoaded() {
     songEat.play()
 }
 
-function songEatDie() {
-    songDie.setVolume(0.1);
-    songDie.play()
+function songDeathLoaded() {
+    songDeath.setVolume(0.1);
+    songDeath.play()
 }
 
 function draw(){
