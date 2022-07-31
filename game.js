@@ -2,16 +2,15 @@ let songEat;
 let songDeath;
 
 function setup(){
-    let canvas = createCanvas((windowWidth - 500), (windowHeight - 100))
+    let canvas = createCanvas(600, 600)
     let x = (windowWidth - width) / 2 
     let y = (windowHeight - height) / 20
     canvas.position(x, y)
 
     songEat = loadSound('sounds/human-male-enjoy-humm.wav');
     songDeath = loadSound('sounds/retro-arcade-lose.wav');
-    
 
-    frameRate(10)
+    frameRate(20)
     food.add()
 }
 
