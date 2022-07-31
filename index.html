@@ -11,18 +11,23 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="container">
-            <p>Use ⌨ arrows</p>
-            <p>🡸 Left</p>
-            <p>🡹 Up</p>
-            <p>🡺 Right</p>
-            <p>🡻 Down</p>
+        <div class="container-left">
+            <div class="container-arrows">
+                <p>Use ⌨ arrows</p>
+                <p>🡸 Left</p>
+                <p>🡹 Up</p>
+                <p>🡺 Right</p>
+                <p>🡻 Down</p>
+            </div>
+            <div class="container-rules">
+                <p><img class="tombstone" src="assets/tombstone-pixel-art.png"></p>
+                <p>You can <strong>die</strong> if you...</p>
+                <p>Hit yourself 🐍</p>
+                <p>Hit the wall 🧱</p>
+            </div>
         </div>
-        <div class="container2">
-            <p><img class="tombstone" src="assets/tombstone-pixel-art.png"></p>
-            <p>You can <strong>die</strong> if you...</p>
-            <p>Hit yourself 🐍</p>
-            <p>Hit the wall 🧱</p>
+        <div class="container-right">
+            <strong><p id="score"></p></strong>
         </div>
     </body>
 </html>

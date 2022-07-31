@@ -48,6 +48,11 @@ const snake = {
             if(distance < 1){
                 this.size = 0
                 this.tail = []
+                
+                points = 0
+                showPoints(points)
+                frameRate(9)
+
                 songDeathLoaded()
             }
         }

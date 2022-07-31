@@ -1,24 +1,45 @@
-.container {
+.container-left{
+  width: 50%;
+  height: 50%;
+  float: left;
+}
+
+.container-right{
+  width: 50%;
+  height: 50%;
+  margin-left: 50%;
+}
+
+.container-arrows {
     font-family: arial;
     font-size: 100%;
-    margin: 2% 0% 0% 9%;
-    width: 10%;
+    margin: 0% 0% 2% 15%;
+    width: 20%;
     height: 10%;
     outline: dashed 1px black;
     text-align: center;
-  }
+}
 
-  .container2 {
-    font-family: arial;
-    font-size: 100%;
-    margin: 2% 0% 0% 9%;
-    width: 10%;
-    height: 10%;
-    outline: dashed 1px black;
-    text-align: center;
-  }
+.container-rules {
+  font-family: arial;
+  font-size: 100%;
+  margin: 0% 0% 0% 15%;
+  width: 20%;
+  height: 10%;
+  outline: dashed 1px black;
+  text-align: center;
+}
 
-  .tombstone{
-    width: 40%;
-    height: 20%;
-  }
+.tombstone{
+  width: 40%;
+  height: 20%;
+}
+
+#score{
+  text-align: center;
+  font-family: arial;
+  width: 20%;
+  height: 10%;
+  outline: dashed 1px black;
+  margin: 2% 0% 0% 68%;
+}

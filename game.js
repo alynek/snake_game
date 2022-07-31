@@ -1,5 +1,8 @@
 let songEat;
 let songDeath;
+let velocityFrameRate = 9;
+let points = 0;
+let score;
 
 function setup(){
     let canvas = createCanvas(600, 600)
@@ -10,8 +13,11 @@ function setup(){
     songEat = loadSound('sounds/human-male-enjoy-humm.wav');
     songDeath = loadSound('sounds/retro-arcade-lose.wav');
 
-    frameRate(9)
+    frameRate(velocityFrameRate)
     food.add()
+
+    score = document.getElementById('score')
+    showPoints(points)
 }
 
 function songEatLoaded() {
@@ -24,11 +30,27 @@ function songDeathLoaded() {
     songDeath.play()
 }
 
+function increaseFrameRate(points){
+    if(points % 2 == 0){
+        velocityFrameRate++
+        frameRate(velocityFrameRate)
+    }
+}
+
+function showPoints(points){
+    score.innerHTML = `SCORE: ${points}`
+}
+
 function draw(){
     background(51) 
     if(snake.eat(food)){
         snake.size++
         food.add()
+
+        points +=5
+        showPoints(points)
+        increaseFrameRate(points)
+        
         songEatLoaded()
     } 
     snake.die()
