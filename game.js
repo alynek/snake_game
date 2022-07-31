@@ -10,7 +10,7 @@ function setup(){
     songEat = loadSound('sounds/human-male-enjoy-humm.wav');
     songDeath = loadSound('sounds/retro-arcade-lose.wav');
 
-    frameRate(20)
+    frameRate(9)
     food.add()
 }
 
