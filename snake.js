@@ -51,7 +51,8 @@ const snake = {
                 
                 points = 0
                 showPoints(points)
-                frameRate(9)
+                velocityFrameRate = 9;
+                frameRate(velocityFrameRate)
 
                 songDeathLoaded()
             }
