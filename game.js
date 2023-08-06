@@ -3,11 +3,12 @@ let songDeath;
 let velocityFrameRate = 9;
 let points = 0;
 let score;
+let direction = 'right'
 
 function setup(){
     let canvas = createCanvas(600, 600)
-    let x = (windowWidth - width) / 2 
-    let y = (windowHeight - height) / 20
+    x = (windowWidth - width) / 2 
+    y = (windowHeight - height) / 20
     canvas.position(x, y)
 
     songEat = loadSound('sounds/human-male-enjoy-humm.wav');
@@ -44,7 +45,7 @@ function showPoints(points){
 function draw(){
     background(51) 
     if(snake.eat(food)){
-        snake.size++
+        snake.upLevelSnake()
         food.add()
 
         points +=5
@@ -53,25 +54,81 @@ function draw(){
         
         songEatLoaded()
     } 
-    snake.die()
+    snake.die(x, y)
     snake.update()
     snake.show()
     food.show()
 }
 
 function keyPressed(){
-    switch(keyCode){
-        case UP_ARROW: 
+
+    if(keyCode == UP_ARROW){
+        if(snake.size == 0 || direction != 'down'){
+            direction = 'up'
             snake.move(0, -1)
-            break
-        case DOWN_ARROW:
-            snake.move(0, 1)
-            break
-        case RIGHT_ARROW:
-            snake.move(1, 0)
-            break
-        case LEFT_ARROW:
-            snake.move(-1, 0)
-            break
+        }
+        else{
+            return;
+        }
     }
+    if(keyCode == DOWN_ARROW){
+        if(snake.size == 0 || direction != 'up'){
+            direction = 'down'
+            snake.move(0, 1)
+        }
+        else{
+            return;
+        }
+    }
+    if(keyCode == RIGHT_ARROW){
+        if(snake.size == 0 || direction != 'left'){
+            direction = 'right'
+            snake.move(1, 0)
+        }
+        else{
+            return;
+        }
+    }
+    if(keyCode == LEFT_ARROW){
+        if(snake.size == 0 || direction != 'right'){
+            direction = 'left'
+            snake.move(-1, 0)
+        }
+        else{
+            return;
+        }
+    }
+    
+    // if(snake.size == 0 && keyCode == UP_ARROW){
+    //     direction = 'up'
+    //     snake.move(0, -1)
+    // }
+    // else if(keyCode == UP_ARROW && direction != 'down'){
+    //     direction = 'up'
+    //     snake.move(0, -1)
+    // }
+    // if(snake.size == 0 && keyCode == DOWN_ARROW){
+    //     direction = 'down'
+    //     snake.move(0, 1)
+    // }
+    // else if(keyCode == DOWN_ARROW && direction != 'up'){
+    //     direction = 'down'
+    //     snake.move(0, 1)
+    // }
+    // if(snake.size == 0 && keyCode == RIGHT_ARROW){
+    //     direction = 'right'
+    //     snake.move(1, 0)
+    // }
+    // else if(keyCode == RIGHT_ARROW && direction != 'left'){
+    //     direction = 'right'
+    //     snake.move(1, 0)
+    // }
+    // if(snake.size == 0 && keyCode == LEFT_ARROW){
+    //     direction = 'left'
+    //     snake.move(-1, 0)
+    // }
+    // else if(keyCode == LEFT_ARROW && direction != 'right'){
+    //     direction = 'left'
+    //     snake.move(-1, 0)
+    // }
 }

@@ -29,8 +29,8 @@ const snake = {
         for(let i = 0; i < this.tail.length; i++){
             rect(this.tail[i].x, this.tail[i].y, this.scale, this.scale)
         }
+        rect(this.x, this.y, this.scale, this.scale, 20, 15, 10, 5)
 
-        rect(this.x, this.y, this.scale, this.scale)
     },
 
     move(x, y){
@@ -42,6 +42,11 @@ const snake = {
         let distance = dist(this.x, this.y, food.position.x, food.position.y)
         return distance < 1
     },
+
+    upLevelSnake(){
+        snake.size++
+    },
+
     die(){
         for(let i = 0; i < this.tail.length; i++){
             let distance = dist(this.x, this.y, this.tail[i].x, this.tail[i].y)
