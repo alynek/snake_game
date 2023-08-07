@@ -54,6 +54,7 @@ const snake = {
                 this.size = 0
                 this.tail = []
                 
+                bestScore.update(points)
                 points = 0
                 showPoints(points)
                 velocityFrameRate = 9;

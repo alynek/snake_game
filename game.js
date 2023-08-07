@@ -98,37 +98,4 @@ function keyPressed(){
             return;
         }
     }
-    
-    // if(snake.size == 0 && keyCode == UP_ARROW){
-    //     direction = 'up'
-    //     snake.move(0, -1)
-    // }
-    // else if(keyCode == UP_ARROW && direction != 'down'){
-    //     direction = 'up'
-    //     snake.move(0, -1)
-    // }
-    // if(snake.size == 0 && keyCode == DOWN_ARROW){
-    //     direction = 'down'
-    //     snake.move(0, 1)
-    // }
-    // else if(keyCode == DOWN_ARROW && direction != 'up'){
-    //     direction = 'down'
-    //     snake.move(0, 1)
-    // }
-    // if(snake.size == 0 && keyCode == RIGHT_ARROW){
-    //     direction = 'right'
-    //     snake.move(1, 0)
-    // }
-    // else if(keyCode == RIGHT_ARROW && direction != 'left'){
-    //     direction = 'right'
-    //     snake.move(1, 0)
-    // }
-    // if(snake.size == 0 && keyCode == LEFT_ARROW){
-    //     direction = 'left'
-    //     snake.move(-1, 0)
-    // }
-    // else if(keyCode == LEFT_ARROW && direction != 'right'){
-    //     direction = 'left'
-    //     snake.move(-1, 0)
-    // }
 }
