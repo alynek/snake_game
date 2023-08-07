@@ -3,15 +3,22 @@ const bestScore = {
     currentHighestScore: 0,
     dateOfcurrentHighestScore: 0,
 
-    update(points){
+    update(lastScore){
 
         bestScore.currentHighestScore = bestScore.getLocalStorage()
-        
-        if(points > bestScore.currentHighestScore){
-            bestScore.currentHighestScore = points
-            bestScore.dateOfcurrentHighestScore = new Date().toLocaleDateString()
-            bestScore.showPoints(bestScore.currentHighestScore, bestScore.dateOfcurrentHighestScore)
-            bestScore.saveLocalStorage(bestScore.currentHighestScore)
+
+        if(bestScore.currentHighestScore != null){
+            if(lastScore > bestScore.currentHighestScore){
+                bestScore.currentHighestScore = lastScore
+                bestScore.dateOfcurrentHighestScore = new Date().toLocaleString()
+                bestScore.showPoints(bestScore.currentHighestScore, bestScore.dateOfcurrentHighestScore)
+                bestScore.saveLocalStorage(bestScore.currentHighestScore)
+            }
+        }
+        else{
+            bestScore.dateOfcurrentHighestScore = new Date().toLocaleString()
+            bestScore.showPoints(lastScore, bestScore.dateOfcurrentHighestScore)
+            bestScore.saveLocalStorage(lastScore)
         }
     },
 
