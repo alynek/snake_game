@@ -13,6 +13,8 @@ const bestScore = {
                 bestScore.dateOfcurrentHighestScore = new Date().toLocaleString()
                 bestScore.showPoints(bestScore.currentHighestScore, bestScore.dateOfcurrentHighestScore)
                 bestScore.saveLocalStorage(bestScore.currentHighestScore)
+            }else{
+                bestScore.showPoints(bestScore.currentHighestScore, bestScore.dateOfcurrentHighestScore)
             }
         }
         else{

@@ -1,45 +1,56 @@
-.container-left{
-  width: 50%;
-  height: 50%;
-  float: left;
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #555;
+  height: 100%;
 }
 
-.container-right{
-  width: 50%;
-  height: 50%;
-  margin-left: 50%;
+main{
+  width: 75%;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
-.container-arrows {
-    font-family: arial;
-    font-size: 100%;
-    margin: 0% 0% 2% 15%;
-    width: 20%;
-    height: 10%;
-    outline: dashed 1px black;
-    text-align: center;
+canvas {
+  display: block;
+  margin: 0 auto;
 }
 
-.container-rules {
-  font-family: arial;
-  font-size: 100%;
-  margin: 0% 0% 0% 15%;
-  width: 20%;
-  height: 10%;
-  outline: dashed 1px black;
+.container-score{
+  width: 80%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 20px;
   text-align: center;
 }
 
-.tombstone{
-  width: 40%;
-  height: 20%;
-}
-
-#score, #bestScore{
+#score{
   text-align: center;
   font-family: arial;
-  width: 30%;
-  height: 10%;
-  outline: dashed 1px black;
-  margin: 2% 0% 0% 68%;
+  outline: dashed 1px #f13333;
+  color:#d7c9c9;
+  font-size: larger;
+}
+
+.container-bestScore{
+  float: right;
+  width: 25%;
+  outline: dashed 1px #716a6a;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center; 
+}
+
+#bestScore{
+  text-align: center;
+  font-family: arial;
+  outline: dashed 1px #716a6a;
+}
+
+.container-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
