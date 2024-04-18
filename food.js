@@ -5,7 +5,7 @@ const food = {
     add(){
         let cols = floor(width / this.scale)
         let rows = floor(height / this.scale)
-        this.position = createVector(floor(random(cols)), floor(random(rows)))
+        this.position = createVector(floor(random(1, (cols - 1))), floor(random(1, (rows - 1))))
         this.position.mult(this.scale)
     },
 

@@ -1,6 +1,6 @@
 const snake = {
-    x: 0,
-    y: 0,
+    x: 20,
+    y: 20,
     xspeed: 1,
     yspeed: 0,
     scale: 20,
@@ -49,7 +49,7 @@ const snake = {
 
     die(){
         for(let i = 0; i < this.tail.length; i++){
-            let distance = dist(this.x, this.y, this.tail[i].x, this.tail[i].y)
+            let distance = dist((this.x - 20), (this.y - 20), (this.tail[i].x - 20), (this.tail[i].y - 20))
             if(distance < 1){
                 this.size = 0
                 this.tail = []
