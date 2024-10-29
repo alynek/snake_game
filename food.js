@@ -12,5 +12,10 @@ const food = {
     show(){
         fill(255, 0, 100)
         rect(this.position.x, this.position.y, this.scale, this.scale)
+    },
+
+    mostraPosicaoComida(){
+        console.log(`Coordenada X: ${this.position.x}`)
+        console.log(`Coordenada Y: ${this.position.y}`)
     }
 }

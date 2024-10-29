@@ -10,6 +10,44 @@
         <script type="text/javascript" src="snake.js"></script>
         <script type="text/javascript" src="bestScore.js"></script>
         <link rel="stylesheet" href="styles.css">
+        <style>
+         
+        .canvas-container {
+            position: relative;
+        }
+
+        /* Eixo X */
+        #eixo-x {
+            width: 680px;
+            height: 3px;
+            border: 100px;
+            background-color: rgb(56, 54, 54);
+            position: absolute;
+            top: 590px; /* Posição do eixo X na parte inferior do canvas */
+            left:300px;
+        }
+
+        /* Eixo Y */
+        #eixo-y {
+            width: 3px;
+            height: 640px;
+            background-color: rgb(51, 49, 49);
+            position: absolute;
+            top: -30px; /* Posição do eixo Y na parte superior do canvas */
+            left: 340px; /* Posição do eixo Y na lateral esquerda do canvas */
+        }
+
+        /* Rótulos */
+        .rotulo {
+            color: rgb(97, 27, 27);
+            position: absolute;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #rotulo-width { top: 620px; left: 380px; }
+        #rotulo-height { top: 0px; left: 270px; }
+        </style>
     </head>
     <body>
         <div class="container-left">
@@ -30,6 +68,16 @@
         <div class="container-right">
             <strong><p id="score"></p></strong>
             <strong><p id="bestScore"></p></strong>
+        </div>
+        <div class="canvas-container">
+            <!-- O canvas agora é um elemento existente em seu código -->
+            <div id="canvas" style="width: 600px; height: 600px;"></div>
+            <!-- Eixos fora do canvas -->
+            <div id="eixo-x"></div>
+            <div id="eixo-y"></div>
+            <!-- Rótulos -->
+            <div id="rotulo-width" class="rotulo">Eixo X</div>
+            <div id="rotulo-height" class="rotulo">Eixo Y</div>
         </div>
     </body>
 </html>

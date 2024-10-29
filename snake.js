@@ -6,6 +6,8 @@ const snake = {
     scale: 20,
     size: 0,
     tail: [],
+    prevX : 0,
+    prevY : 0,
 
     update(){
         for(let i = 0; i < this.tail.length - 1; i++){
@@ -21,6 +23,19 @@ const snake = {
 
         this.x = constrain(this.x, 0, width - this.scale)
         this.y = constrain(this.y, 0, height - this.scale)
+
+        if (this.x !== this.prevX || this.y !== this.prevY) {
+            console.log(`Coordenada X: ${this.x}`);
+            console.log(`Coordenada Y: ${this.y}`);
+
+            this.prevX = this.x;
+            this.prevY = this.y;
+        }
+    },
+
+    mostraPosicaoSnake(){
+        console.log(`Coordenada X: ${this.x}`)
+        console.log(`Coordenada Y: ${this.y}`)
     },
 
     show(){
@@ -34,10 +49,10 @@ const snake = {
     },
 
     move(x, y){
-        this.xspeed = x
         console.log(`Coordenada X: ${this.x}`)
+        this.xspeed = x
+        console.log(`Coordenada Y: ${this.y}`)
         this.yspeed = y
-        console.log(`Coordenada X: ${this.y}`)
     },
 
     eat(food){
