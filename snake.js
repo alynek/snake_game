@@ -35,7 +35,9 @@ const snake = {
 
     move(x, y){
         this.xspeed = x
+        console.log(`Coordenada X: ${this.xspeed}`)
         this.yspeed = y
+        console.log(`Coordenada X: ${this.yspeed}`)
     },
 
     eat(food){
