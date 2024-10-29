@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Snake Game</title>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
-        <script language="javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.min.js"></script>
-        <script type="text/javascript" src="game.js"></script>
-        <script type="text/javascript" src="food.js"></script>
-        <script type="text/javascript" src="snake.js"></script>
-        <script type="text/javascript" src="bestScore.js"></script>
-        <link rel="stylesheet" href="styles.css">
-        <style>
-         
+<head>
+    <meta charset="UTF-8">
+    <title>Snake Game</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
+    <script language="javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.min.js"></script>
+    <script type="text/javascript" src="game.js"></script>
+    <script type="text/javascript" src="food.js"></script>
+    <script type="text/javascript" src="snake.js"></script>
+    <script type="text/javascript" src="bestScore.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
         .canvas-container {
             position: relative;
         }
@@ -20,11 +19,21 @@
         #eixo-x {
             width: 680px;
             height: 3px;
-            border: 100px;
             background-color: rgb(56, 54, 54);
             position: absolute;
             top: 590px; /* Posição do eixo X na parte inferior do canvas */
-            left:300px;
+            left: 300px;
+        }
+
+        /* Setinha no final do eixo X */
+        #eixo-x::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: -3px;
+            border-left: 10px solid rgb(56, 54, 54); /* Cor da seta */
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
         }
 
         /* Eixo Y */
@@ -37,6 +46,17 @@
             left: 340px; /* Posição do eixo Y na lateral esquerda do canvas */
         }
 
+        /* Setinha no final do eixo Y */
+        #eixo-y::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: -3px;
+            border-top: 10px solid rgb(51, 49, 49); /* Cor da seta */
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+        }
+
         /* Rótulos */
         .rotulo {
             color: rgb(97, 27, 27);
@@ -47,37 +67,34 @@
 
         #rotulo-width { top: 620px; left: 380px; }
         #rotulo-height { top: 0px; left: 270px; }
-        </style>
-    </head>
-    <body>
-        <div class="container-left">
-            <div class="container-arrows">
-                <p>Use ⌨ arrows</p>
-                <p>🡸 Left</p>
-                <p>🡹 Up</p>
-                <p>🡺 Right</p>
-                <p>🡻 Down</p>
-            </div>
-            <div class="container-rules">
-                <p><img class="tombstone" src="assets/tombstone-pixel-art.png"></p>
-                <p>You can <strong>die</strong> if you...</p>
-                <p>Hit yourself 🐍</p>
-                <p>Hit the wall 🧱</p>
-            </div>
+    </style>
+</head>
+<body>
+    <div class="container-left">
+        <div class="container-arrows">
+            <p>Use ⌨ arrows</p>
+            <p>🡸 Left</p>
+            <p>🡹 Up</p>
+            <p>🡺 Right</p>
+            <p>🡻 Down</p>
         </div>
-        <div class="container-right">
-            <strong><p id="score"></p></strong>
-            <strong><p id="bestScore"></p></strong>
+        <div class="container-rules">
+            <p><img class="tombstone" src="assets/tombstone-pixel-art.png"></p>
+            <p>You can <strong>die</strong> if you...</p>
+            <p>Hit yourself 🐍</p>
+            <p>Hit the wall 🧱</p>
         </div>
-        <div class="canvas-container">
-            <!-- O canvas agora é um elemento existente em seu código -->
-            <div id="canvas" style="width: 600px; height: 600px;"></div>
-            <!-- Eixos fora do canvas -->
-            <div id="eixo-x"></div>
-            <div id="eixo-y"></div>
-            <!-- Rótulos -->
-            <div id="rotulo-width" class="rotulo">Eixo X</div>
-            <div id="rotulo-height" class="rotulo">Eixo Y</div>
-        </div>
-    </body>
+    </div>
+    <div class="container-right">
+        <strong><p id="score"></p></strong>
+        <strong><p id="bestScore"></p></strong>
+    </div>
+    <div class="canvas-container">
+        <div id="canvas" style="width: 600px; height: 600px;"></div>
+        <div id="eixo-x"></div>
+        <div id="eixo-y"></div>
+        <div id="rotulo-width" class="rotulo">Eixo X</div>
+        <div id="rotulo-height" class="rotulo">Eixo Y</div>
+    </div>
+</body>
 </html>
