@@ -8,37 +8,29 @@ let isGameRunning = true;
 let canvas;
 
 function setup(){
-    canvas = createCanvas(600, 600)
-    x = (windowWidth - width) / 2 
-    y = (windowHeight - height) / 20
-    canvas.position(x, y)
+    const container = document.querySelector('.canvas-container');
+    x = 580
+    y = 580
+
+    canvas = createCanvas(x, y); 
+    canvas.parent(container); 
 
     let stopButton = createButton('Parar');
     stopButton.position(10, 10);
-    stopButton.mousePressed(stopGame); // Chama a função stopGame ao clicar
+    stopButton.mousePressed(stopGame);
 
     let startButton = createButton('Continuar');
     startButton.position(10, 40);
-    startButton.mousePressed(startGame); // Chama a função startGame ao clicar
+    startButton.mousePressed(startGame);
 
     songEat = loadSound('sounds/human-male-enjoy-humm.wav');
     songDeath = loadSound('sounds/retro-arcade-lose.wav');
 
-    frameRate(velocityFrameRate)
-    food.add()
+    frameRate(velocityFrameRate);
+    food.add();
 
-    score = document.getElementById('score')
-    showPoints(points)
-}
-
-function centerCanvas() {
-    let x = (windowWidth - width) / 2;
-    let y = (windowHeight - height) / 2;
-    canvas.position(x, y);
-}
-
-function windowResized() {
-    centerCanvas(); // Centraliza novamente o canvas
+    score = document.getElementById('score');
+    showPoints(points);
 }
 
 function songEatLoaded() {
@@ -65,7 +57,7 @@ function showPoints(points){
 function draw(){
     if (isGameRunning) {
         background(51) 
-        coordenadas()
+        showAxis()
         if(snake.eat(food)){
             snake.upLevelSnake()
             food.add()
@@ -83,26 +75,24 @@ function draw(){
     }
 }
 
-function coordenadas(){
-    fill(255);   // Cor branca para o texto dos rótulos
-
-    // Rótulos para os extremos dos eixos
+function showAxis(){
+    fill(255);  
     textAlign(CENTER, CENTER);
-    text("(0,0)", 15, 15);  // Rótulo da origem no canto superior esquerdo
-    text("(" + (width - 20) + ",0)", width - 25, 15);   // Rótulo do final do eixo X no canto superior direito
-    text("(0," + (height - 20) + ")", 20, height - 20); // Rótulo do final do eixo Y no canto inferior esquerdo
-    text("(" + (width - 20) + ","+(height - 20 )+")", 570, 590); // Rótulo do final do eixo X e Y no canto inferior direito
+    text("(0,0)", 15, 15);  
+    text("(" + (width - 20) + ",0)", width - 25, 15); 
+    text("(0," + (height - 20) + ")", 20, height - 20);
+    text("(" + (width - 20) + ","+(height - 20 )+")", 550, 560); 
 
 }
 
 function stopGame() {
-    noLoop(); // Para o loop
-    isGameRunning = false; // Atualiza o estado do jogo
+    noLoop(); 
+    isGameRunning = false; 
 }
 
 function startGame() {
-    loop(); // Retoma o loop
-    isGameRunning = true; // Atualiza o estado do jogo
+    loop(); 
+    isGameRunning = true; 
 }
 
 function keyPressed(){
